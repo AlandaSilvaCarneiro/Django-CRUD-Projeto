@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <title>Cliente lista</title>
+</head>
+<body>
+    <h1>Lista de clientes</h1>
+    <ul>
+    {% for cliente  in object_list %}
+    
+       
+            <li>
+                {{cliente.nome}} - <a href="{% url 'cliente:update' pk=cliente.id %}">Editar</a>   
+            </li>
+        
+    
+    {% endfor %}
+</ul>
+<input type="submit" value="create" onclick="location.href='{% url 'cliente:create' %}' ">
+</body>
+</html>
